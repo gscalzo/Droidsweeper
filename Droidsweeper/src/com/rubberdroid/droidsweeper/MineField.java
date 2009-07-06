@@ -25,4 +25,25 @@ public class MineField {
 		return true;
 
 	}
+
+	public int valueAt(int i, int j) {
+		return tiles[j][i];
+	}
+
+	public void setValueAt(int i, int j, int value) {
+		tiles[j][i] = value;
+	}
+
+	public int width() {
+		return tiles[0].length;
+	}
+
+	public int height() {
+		return tiles.length;
+	}
+
+	public MineField copy() {
+		return new MineField(tiles);
+	}
+
 }

@@ -1,23 +1,23 @@
 package com.rubberdroid.droidsweeper;
 
 public class PuzzleFiller {
-	private int[][] puzzle;
+	private MineField puzzle;
 
-	public PuzzleFiller(int[][] puzzle) {
+	public PuzzleFiller(MineField puzzle) {
 		this.puzzle = puzzle;
 	}
 
-	public int[][] filled() {
-		int[][] toFill = puzzle.clone();
-		for (int i = 0; i < puzzle[0].length; ++i)
-			for (int j = 0; j < puzzle.length; ++j)
-				toFill[j][i] = minesCount(i, j);
+	public MineField filled() {
+		MineField toFill = puzzle.copy();
+		for (int i = 0; i < puzzle.width(); ++i)
+			for (int j = 0; j < puzzle.height(); ++j)
+				toFill.setValueAt(i, j, minesCount(i, j));
 
 		return toFill;
 	}
 
 	int minesCount(int i, int j) {
-		if (puzzle[j][i] == 10)
+		if (puzzle.valueAt(i, j) == 10)
 			return 10;
 		int count = 0;
 		for (int x = i - 1; x <= i + 1; ++x)
@@ -29,7 +29,7 @@ public class PuzzleFiller {
 	}
 
 	private boolean containsMine(int x, int y) {
-		return puzzle[y][x] == 10;
+		return puzzle.valueAt(x, y) == 10;
 	}
 
 	private boolean areTheSame(int i, int j, int x, int y) {
@@ -37,7 +37,7 @@ public class PuzzleFiller {
 	}
 
 	private boolean isContained(int x, int y) {
-		return x >= 0 && x < puzzle[0].length && y >= 0 && y < puzzle.length;
+		return x >= 0 && x < puzzle.width() && y >= 0 && y < puzzle.height();
 	}
 
 }
