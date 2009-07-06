@@ -3,7 +3,7 @@ package com.rubberdroid.droidsweeper;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class PuzzleFillerTest {
+public class PuzzlePositionFillerTest {
 	MineField squaredPuzzle = new MineField(new int[][] { { 0, 0, 10, 0 },
 			{ 0, 10, 0, 0 }, { 0, 0, 0, 0 }, { 10, 0, 0, 10 } });
 
@@ -16,7 +16,7 @@ public class PuzzleFillerTest {
 				{ 2, 2, 2, 1 }, { 10, 2, 2, 10 }, { 3, 10, 4, 2 },
 				{ 2, 10, 10, 1 }, });
 
-		PuzzleFiller filler = new PuzzleFiller(rectPuzzle);
+		PuzzlePositionFiller filler = new PuzzlePositionFiller(rectPuzzle);
 		assertEquals(expectedPuzzle, filler.filled());
 	}
 
@@ -25,13 +25,13 @@ public class PuzzleFillerTest {
 		MineField expectedPuzzle = new MineField(new int[][] { { 1, 2, 10, 1 }, { 1, 10, 2, 1 },
 				{ 2, 2, 2, 1 }, { 10, 1, 1, 10 } });
 
-		PuzzleFiller filler = new PuzzleFiller(squaredPuzzle);
+		PuzzlePositionFiller filler = new PuzzlePositionFiller(squaredPuzzle);
 		assertEquals(expectedPuzzle, filler.filled());
 	}
 
 	@Test
 	public void minesCountShouldReturnTheNumberOfMinesAround() {
-		PuzzleFiller filler = new PuzzleFiller(squaredPuzzle);
+		PuzzlePositionFiller filler = new PuzzlePositionFiller(squaredPuzzle);
 		assertEquals(1, filler.minesCount(0, 0));
 		assertEquals(1, filler.minesCount(3, 0));
 		assertEquals(10, filler.minesCount(0, 3));

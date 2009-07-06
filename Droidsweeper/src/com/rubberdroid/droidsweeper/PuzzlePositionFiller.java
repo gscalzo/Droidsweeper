@@ -1,9 +1,9 @@
 package com.rubberdroid.droidsweeper;
 
-public class PuzzleFiller {
+public class PuzzlePositionFiller {
 	private MineField puzzle;
 
-	public PuzzleFiller(MineField puzzle) {
+	public PuzzlePositionFiller(MineField puzzle) {
 		this.puzzle = puzzle;
 	}
 
@@ -22,7 +22,7 @@ public class PuzzleFiller {
 		int count = 0;
 		for (int x = i - 1; x <= i + 1; ++x)
 			for (int y = j - 1; y <= j + 1; ++y)
-				if (isContained(x, y) && !areTheSame(i, j, x, y)
+				if (puzzle.inBounds(x, y) && !areTheSame(i, j, x, y)
 						&& containsMine(x, y))
 					++count;
 		return count;
@@ -34,10 +34,6 @@ public class PuzzleFiller {
 
 	private boolean areTheSame(int i, int j, int x, int y) {
 		return (x == i && y == j);
-	}
-
-	private boolean isContained(int x, int y) {
-		return x >= 0 && x < puzzle.width() && y >= 0 && y < puzzle.height();
 	}
 
 }
