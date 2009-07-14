@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Droidsweeper!</string>
-    <string name="app_name">Droidsweeper</string>
+	<string name="app_name">Droidsweeper</string>
+	<string name="main_title">Droidsweeper</string>
+	<string name="resume_label">Resume</string>
+	<string name="new_game_label">New Game</string>
+	<string name="about_label">About</string>
+	<string name="about_title">About Droidsweeper</string>
+	<string name="about_text">
+		\
+		Sudoku is a logic-based number placement puzzle.
+		Starting with a
+		partially completed 9x9 grid, the
+		objective is to fill the grid so that
+		each
+		row, each column, and each of the 3x3 boxes
+		(also called
+		<i>blocks</i>
+		) contains the digits
+		1 to 9 exactly once.
+	</string>
+	<string name="settings_label">Settings</string>
+	<string name="settings_title">Droidsweeper settings</string>
+	<string name="soundfx_title">Sound Effects</string>
+	<string name="soundfx_summary">Play sound effects</string>
+	
+	
+	<string name="hints_notes_title">Hints on notes</string>
+	<string name="hints_notes_summary">Show available numbers as notes</string>
+	<string name="hints_numbers_title">Hints on numbers</string>
+	<string name="hints_numbers_summary">Show available numbers during play</string>
+	<string name="new_game_title">Difficulty</string>
+	<string name="easy_label">Easy</string>
+	<string name="simple_label">Simple</string>
+	<string name="medium_label">Medium</string>
+	<string name="expert_label">Expert</string>
+	<string name="game_title">Droidsweeper</string>
+
 </resources>
