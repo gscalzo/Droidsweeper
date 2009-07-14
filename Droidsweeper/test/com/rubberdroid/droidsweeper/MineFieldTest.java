@@ -80,7 +80,13 @@ public class MineFieldTest {
 		mineField.setValueAt(0, 0, 5);
 		assertEquals(5, mineField.valueAt(0, 0));
 		assertEquals(1, cloned.valueAt(0, 0));
-
 	}
+
+	@Test
+	public void aMineFieldShouldReturnIfContainAMine() {
+		assertFalse(mineField.containsMine(0,0));
+		assertTrue(mineField.containsMine(2,0));
+	}
+
 
 }

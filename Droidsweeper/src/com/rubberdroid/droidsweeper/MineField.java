@@ -68,4 +68,11 @@ public class MineField {
 		return 0 <= i && i < width() && 0 <= j && j < height();
 	}
 
+	public boolean containsMine(int i, int j) {
+		return tiles[j][i] == 10;
+	}
+
+	public void setMine(int i, int j) {
+		tiles[j][i] = 10;
+	}
 }
