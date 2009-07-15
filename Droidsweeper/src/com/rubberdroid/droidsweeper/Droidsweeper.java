@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 public class Droidsweeper extends Activity implements OnClickListener {
-	private static final String TAG = "Droidsweeper";
+	public static final String TAG = "Droidsweeper";
 	private HashMap<Integer, Runnable> buttonsActions = new HashMap<Integer, Runnable>();
 	public static final String KEY_DIFFICULTY = "difficulty";
 	public static final int DIFFICULTY_EASY = 0;

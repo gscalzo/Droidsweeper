@@ -18,14 +18,21 @@ public class PuzzleGenerator {
 			return;
 
 		while (true) {
-			int x = random.nextInt(mineField.width());
-			int y = random.nextInt(mineField.height());
-			if(!mineField.containsMine(x, y)){
-				mineField.setMine(x,y);
+			Pair randCoordinates = randCoordinates(mineField);
+			if(!mineField.containsMine(randCoordinates.a(),randCoordinates.b())){
+				mineField.setMine(randCoordinates.a(),randCoordinates.b());
 				addMines(mineField, minesToAdd-1);
 				return;
 			}
 		}
+	}
+
+	private Pair randCoordinates(MineField mineField) {
+		int randValue=random.nextInt(mineField.width()*mineField.height());
+		int y = randValue/mineField.width();
+		int x = randValue-y*mineField.width();
+		Pair randCoordinates=new Pair(x,y);
+		return randCoordinates;
 	}
 
 }
