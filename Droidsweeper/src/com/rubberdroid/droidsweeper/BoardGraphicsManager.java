@@ -6,7 +6,7 @@ public class BoardGraphicsManager {
 
 	public BoardGraphicsManager(int w, int h) {
 		this.w = w;
-		tileSide = w / 10;
+		tileSide = w / Tiles.PIXEL_FOR_TILE;
 	}
 
 	public Pair tileAt(int i, int j) {

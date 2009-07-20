@@ -36,7 +36,7 @@ public class Game extends Activity {
 	}
 
 	private MineField createMineField(int diff) {
-		MineField result = new PuzzleGenerator().generate(10, 10, 10);
+		MineField result = new PuzzleGenerator().generate(16, 16, 30);
 		return new PuzzlePositionFiller(result).filled();
 	}
 

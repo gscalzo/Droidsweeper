@@ -17,8 +17,8 @@ public class PuzzlePositionFiller {
 	}
 
 	int minesCount(int i, int j) {
-		if (puzzle.valueAt(i, j) == 10)
-			return 10;
+		if (puzzle.valueAt(i, j) == Tiles.BOMB)
+			return Tiles.BOMB;
 		int count = 0;
 		for (int x = i - 1; x <= i + 1; ++x)
 			for (int y = j - 1; y <= j + 1; ++y)
@@ -29,7 +29,7 @@ public class PuzzlePositionFiller {
 	}
 
 	private boolean containsMine(int x, int y) {
-		return puzzle.valueAt(x, y) == 10;
+		return puzzle.valueAt(x, y) == Tiles.BOMB;
 	}
 
 	private boolean areTheSame(int i, int j, int x, int y) {

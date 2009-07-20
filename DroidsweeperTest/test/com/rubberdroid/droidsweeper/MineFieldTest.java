@@ -9,17 +9,17 @@ public class MineFieldTest {
 
 	@Before
 	public void setUp() {
-		int[][] v1 = { { 1, 2, 10, 1 }, { 1, 10, 2, 1 }, { 2, 2, 2, 1 },
-				{ 10, 2, 2, 10 }, { 3, 10, 4, 2 }, { 2, 10, 10, 1 }, };
+		int[][] v1 = { { 1, 2, Tiles.BOMB, 1 }, { 1, Tiles.BOMB, 2, 1 }, { 2, 2, 2, 1 },
+				{ Tiles.BOMB, 2, 2, Tiles.BOMB }, { 3, Tiles.BOMB, 4, 2 }, { 2, Tiles.BOMB, Tiles.BOMB, 1 }, };
 		mineField = new MineField(v1);
 	}
 
 	@Test
 	public void twoMineFieldsShouldBeEqualsIfTheyContainTheSameElements() {
-		int[][] v1 = { { 1, 2, 10, 1 }, { 1, 10, 2, 1 }, { 2, 2, 2, 1 },
-				{ 10, 2, 2, 10 }, { 3, 10, 4, 2 }, { 2, 10, 10, 1 }, };
-		int[][] v2 = { { 0, 2, 10, 1 }, { 1, 10, 2, 1 }, { 2, 2, 2, 1 },
-				{ 10, 2, 2, 10 }, { 3, 10, 4, 2 }, { 2, 10, 10, 1 }, };
+		int[][] v1 = { { 1, 2, Tiles.BOMB, 1 }, { 1, Tiles.BOMB, 2, 1 }, { 2, 2, 2, 1 },
+				{ Tiles.BOMB, 2, 2, Tiles.BOMB }, { 3, Tiles.BOMB, 4, 2 }, { 2, Tiles.BOMB, Tiles.BOMB, 1 }, };
+		int[][] v2 = { { 0, 2, Tiles.BOMB, 1 }, { 1, Tiles.BOMB, 2, 1 }, { 2, 2, 2, 1 },
+				{ Tiles.BOMB, 2, 2, Tiles.BOMB }, { 3, Tiles.BOMB, 4, 2 }, { 2, Tiles.BOMB, Tiles.BOMB, 1 }, };
 		MineField first = new MineField(v1);
 		MineField second = new MineField(v2);
 

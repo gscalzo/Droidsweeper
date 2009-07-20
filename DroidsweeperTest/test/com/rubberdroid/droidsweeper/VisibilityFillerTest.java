@@ -6,12 +6,12 @@ import static org.junit.Assert.*;
 
 public class VisibilityFillerTest {
 	MineField puzzle = new MineField(new int[][] { 
-			{ 0, 1, 10, 1 },
+			{ 0, 1, Tiles.BOMB, 1 },
 			{ 0, 1, 1, 1 }, 
 			{ 1, 1, 1, 0 }, 
-			{ 1, 10, 1, 0 }, 
+			{ 1, Tiles.BOMB, 1, 0 }, 
 			{ 1, 2, 2, 1 },
-			{ 0, 1, 10, 1 } });
+			{ 0, 1, Tiles.BOMB, 1 } });
 	private VisibilityManager vManager;
 
 	@Before

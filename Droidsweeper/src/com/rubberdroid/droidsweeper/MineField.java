@@ -69,10 +69,10 @@ public class MineField {
 	}
 
 	public boolean containsMine(int i, int j) {
-		return tiles[j][i] == 10;
+		return tiles[j][i] == Tiles.BOMB;
 	}
 
 	public void setMine(int i, int j) {
-		tiles[j][i] = 10;
+		tiles[j][i] = Tiles.BOMB;
 	}
 }

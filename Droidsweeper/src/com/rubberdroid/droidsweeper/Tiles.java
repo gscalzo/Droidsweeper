@@ -10,6 +10,8 @@ import android.graphics.Paint.FontMetrics;
 import android.graphics.Paint.Style;
 
 public class Tiles {
+	public static final int PIXEL_FOR_TILE = 16;
+	public static final int BOMB = 10;
 	private MineField mineField;
 	private Bitmap tile;
 	private Rect rectTile;
@@ -20,9 +22,9 @@ public class Tiles {
 	public Tiles(int w, int h, MineField mineField, Resources resources,
 			BoardGraphicsManager boardGraphicsManager) {
 		this.mineField = mineField;
-		tile = BitmapFactory.decodeResource(resources, R.drawable.tile_blu);
+		tile = BitmapFactory.decodeResource(resources, R.drawable.cell_closed);
 		rectTile = new Rect(0, 0, tile.getWidth(), tile.getHeight());
-		tileSide = w / 10;
+		tileSide = w / PIXEL_FOR_TILE;
 		this.boardGraphicsManager = boardGraphicsManager;
 
 		numbersPaint = createNumbersPaint(resources, R.color.numbers);
